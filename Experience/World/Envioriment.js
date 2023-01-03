@@ -48,14 +48,14 @@ export default class Envioriment{
     switchTheme(theme){
         if(theme === "dark"){
             GSAP.to(this.sunLigth.color,{
-                b: 0.00784313725490196,
-                g: 0.00784313725490196,
-                r: 0.011764705882352941,
+                b: 0.06666666666666667,
+                g: 0.06666666666666667,
+                r: 0.09411764705882353,
             });
             GSAP.to(this.ambientalLight.color,{
-                b: 0.00784313725490196,
-                g: 0.00784313725490196,
-                r: 0.011764705882352941,
+                b: 0.06666666666666667,
+                g: 0.06666666666666667,
+                r: 0.09411764705882353,
             });
             GSAP.to(this.sunLigth,{
                 intencity: 0.78,
@@ -65,7 +65,7 @@ export default class Envioriment{
             });
         }else{
             GSAP.to(this.sunLigth.color,{
-                b: 0.00784313725490196,
+                b: 0.5019607843137255,
                 g: 0.00784313725490196,
                 r: 0.011764705882352941,
             });
