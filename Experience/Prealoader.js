@@ -1,5 +1,6 @@
 import { EventEmitter } from "events";
 import Experience from "./Experience";
+import * as THREE from "three";
 import convert from "./Utils/covertDivsToSpans.js";
 import GSAP from "gsap";
 
@@ -71,7 +72,9 @@ export default class Preloader extends EventEmitter {
       }
 
     secondInto() {
-        console.log(this.roomChildren)
+        const screenWidth = window.innerWidth;
+        const xPos = screenWidth / 3;
+        const scale = 2 * this.camera.orthographicCamera.top / window.innerHeight;
         return new Promise((resolve) => {
             this.secondTimeline = new GSAP.timeline();
 
@@ -136,9 +139,10 @@ export default class Preloader extends EventEmitter {
                     "introtext"
                 )
                 .to(
+
                     this.room.position,
                     {
-                        x   : -4,
+                        x   :  -xPos * scale,
                     },
                     "chair"
                 )
